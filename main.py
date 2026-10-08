@@ -13,16 +13,22 @@ def batalha():
         print("Você acertou um soco em cheio!")
         print(f"Sua vida: {vida}")
         print(f"Vida do oponente: {vida_oponente - 20}")
+        vida = vida
+        vida_oponente = vida_oponente-20
         batalha()
     elif ataque == "2":
         print("Você deu um chute de raspão!")
         print(f"Sua vida: {vida}")
         print(f"Vida do oponente: {vida_oponente - 5}")
+        vida = vida
+        vida_oponente = vida_oponente-5
         batalha()
     elif ataque == "3":
         print("Você tentou fugir... Mas ele foi mais rápido e te acertou!")
         print(f"Sua vida: {vida - 20}")
         print(f"Vida do oponente: {vida_oponente}")
+        vida = vida-20
+        vida_oponente = vida_oponente
         batalha()
 
     print("Vez do oponente!")
