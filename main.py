@@ -1,6 +1,4 @@
-def batalha():
-    vida = 100
-    vida_oponente = 50
+def batalha(vida=100, vida_oponente=50):
     print(f"Sua vida é {vida}")
     print(f"A vida do oponente é {vida_oponente}")
     print("Você começa! Escolha seu ataque:")
@@ -11,31 +9,51 @@ def batalha():
 
     if ataque == "1":
         print("Você acertou um soco em cheio!")
+        vida_oponente -= 20
         print(f"Sua vida: {vida}")
-        print(f"Vida do oponente: {vida_oponente - 20}")
-        vida = vida
-        vida_oponente = vida_oponente-20
-        batalha()
+        print(f"Vida do oponente: {vida_oponente}")
     elif ataque == "2":
         print("Você deu um chute de raspão!")
+        vida_oponente -= 5
         print(f"Sua vida: {vida}")
-        print(f"Vida do oponente: {vida_oponente - 5}")
-        vida = vida
-        vida_oponente = vida_oponente-5
-        batalha()
+        print(f"Vida do oponente: {vida_oponente}")
     elif ataque == "3":
         print("Você tentou fugir... Mas ele foi mais rápido e te acertou!")
-        print(f"Sua vida: {vida - 20}")
+        vida -= 20
+        print(f"Sua vida: {vida}")
         print(f"Vida do oponente: {vida_oponente}")
-        vida = vida-20
-        vida_oponente = vida_oponente
-        batalha()
+
+    if vida <= 0:
+        print("Você foi derrotado!")
+        return
+    if vida_oponente <= 0:
+        print("Você venceu a batalha!")
+        return
 
     print("Vez do oponente!")
     print("1 - Esquivar")
     print("2 - Bloquear")
     print("3 - Fingir que vai atacar")
     escolha2 = input("Oque você faz? ")
+
+    batalha(vida, vida_oponente)
+
+def troca_poder():
+    print("Deseja  trocar seu poder?")
+    print("1- Sim")
+    print("2 - Não")
+    resposta1 = input("Escolha: ")
+
+    if resposta1 == "1":
+        print("Poderes:")
+        print("1 - Colete")
+        print("2 - Velocidade")
+        print("3 - Bloqueio")
+        poder = input("Digite o número do seu poder: ")
+
+    elif resposta1 == "2":
+        print("Você fica com seu poder... Mas terá que ser esperto!")
+        batalha()
 
 
 print("RPG")
@@ -76,4 +94,4 @@ if escolha1 == "2" and poder == "3":
 
 if escolha1 == "2" and poder != "3":
     print("Seu poder não parou o ataque, boa sorte na próxima!")
-    batalha()
+    troca_poder()
