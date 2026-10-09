@@ -1,97 +1,95 @@
 def batalha(vida=100, vida_oponente=50):
-    print(f"Sua vida é {vida}")
-    print(f"A vida do oponente é {vida_oponente}")
-    print("Você começa! Escolha seu ataque:")
-    print("1 - Soco")
-    print("2 - Chute")
-    print("3 - Tentar Fugir")
-    ataque = input("Escolha: ")
+    print(f"\n[Status] Sua vida: {vida} | Vida do oponente: {vida_oponente}")
+    print("\nÉ o seu momento de agir! O que você faz?")
+    print("1 - Desferir um soco pesado")
+    print("2 - Executar um chute rápido")
+    print("3 - Batida em retirada (Tentar Fugir)")
+    ataque = input("Sua decisão: ")
 
     if ataque == "1":
-        print("Você acertou um soco em cheio!")
+        print("\n💥 Um golpe limpo! Seu soco atinge em cheio o peito do adversário.")
         vida_oponente -= 20
-        print(f"Sua vida: {vida}")
-        print(f"Vida do oponente: {vida_oponente}")
+        print(f"Sua vida: {vida} | Vida do oponente: {vida_oponente}")
     elif ataque == "2":
-        print("Você deu um chute de raspão!")
+        print("\n💨 Você se arrisca em um chute rápido, atingindo o inimigo de raspão.")
         vida_oponente -= 5
-        print(f"Sua vida: {vida}")
-        print(f"Vida do oponente: {vida_oponente}")
+        print(f"Sua vida: {vida} | Vida do oponente: {vida_oponente}")
     elif ataque == "3":
-        print("Você tentou fugir... Mas ele foi mais rápido e te acertou!")
+        print("\n⚠️ Você vira as costas para escapar, mas o inimigo se projeta e te acerta em cheio!")
         vida -= 20
-        print(f"Sua vida: {vida}")
-        print(f"Vida do oponente: {vida_oponente}")
+        print(f"Sua vida: {vida} | Vida do oponente: {vida_oponente}")
 
     if vida <= 0:
-        print("Você foi derrotado!")
+        print("\n💀 Seus joelhos fraquejam e a escuridão toma conta... Você foi derrotado!")
         return
     if vida_oponente <= 0:
-        print("Você venceu a batalha!")
+        print("\n🏆 O inimigo cai no chão sem forças. Vitória triunfante na batalha!")
         return
 
-    print("Vez do oponente!")
-    print("1 - Esquivar")
-    print("2 - Bloquear")
-    print("3 - Fingir que vai atacar")
-    escolha2 = input("Oque você faz? ")
+    print("\n⚠️ O inimigo avança ferozmente! Como você reage ao investida dele?")
+    print("1 - Tentar se esquivar para o lado")
+    print("2 - Erguer a guarda e bloquear")
+    print("3 - Fazer uma finta defensiva")
+    escolha2 = input("Sua reação: ")
 
     batalha(vida, vida_oponente)
 
 def troca_poder():
-    print("Deseja  trocar seu poder?")
-    print("1- Sim")
-    print("2 - Não")
-    resposta1 = input("Escolha: ")
+    print("\nÉ preciso ajustar sua estratégia. Deseja redefinir seu poder especial?")
+    print("1 - Sim, quero trocar")
+    print("2 - Não, vou manter a escolha")
+    resposta1 = input("Sua escolha: ")
 
     if resposta1 == "1":
-        print("Poderes:")
-        print("1 - Colete")
-        print("2 - Velocidade")
-        print("3 - Bloqueio")
-        poder = input("Digite o número do seu poder: ")
+        print("\nSelecione uma nova habilidade especial:")
+        print("1 - Colete Tático (Proteção reforçada)")
+        print("2 - Velocidade Sobre-humana (Reflexos ágeis)")
+        print("3 - Bloqueio Absoluto (Escudo defensivo)")
+        poder = input("Escolha o número da habilidade: ")
+        batalha()
 
     elif resposta1 == "2":
-        print("Você fica com seu poder... Mas terá que ser esperto!")
+        print("\nVocê confia na sua escolha inicial... Mantenha a guarda alta e use a cabeça!")
         batalha()
 
 
-print("RPG")
-nome = input("Qual seu nome: ")
-print("Poderes:")
-print("1 - Colete")
-print("2 - Velocidade")
-print("3 - Bloqueio")
+print("=== TALES OF THE REALM ===")
+nome = input("Antes de iniciar sua jornada, como prefere ser chamado? ")
+
+print(f"\nSaudações, {nome}! Escolha sua habilidade inicial:")
+print("1 - Colete Tático")
+print("2 - Velocidade Sobre-humana")
+print("3 - Bloqueio Absoluto")
 poder = input("Digite o número do seu poder: ")
 
 if poder == "1":
-    print("Colete selecionado!")
+    print("🛡️ Colete Tático equipado com sucesso!")
 elif poder == "2":
-    print("Velocidade selecionada!")
+    print("⚡ Velocidade Sobre-humana ativada!")
 elif poder == "3":
-    print("Bloqueio selecionado!")
+    print("🔰 Bloqueio Absoluto pronto para uso!")
 
 inventario = ["Espada", "Machado", "Baú", "Armadura"]
-pergunta = input("Quer ver seu inventário? 1-Sim, 2-Depois: ")
+pergunta = input("\nDeseja inspecionar o conteúdo da sua mochila agora? (1 - Verificar / 2 - Continuar jornada): ")
 
 if pergunta == "1":
-    print(inventario)
+    print(f"Itens em posse: {inventario}")
 elif pergunta == "2":
-    print("Fechando inventário...")
+    print("Guardando alforje e avançando...")
 
-print(f"{nome}, você está em uma floresta e ouve um barulho...")
-print("Um ser desconhecido aparece das sombras!")
-print("1 - Correr")
-print("2 - Esperar")
-escolha1 = input("Escolha: ")
+print(f"\n{nome}, enquanto caminha sob a copa densa da floresta, um estalar de galhos quebra o silêncio...")
+print("Uma silhueta sombria emerge das sombras com olhos reluzentes!")
+print("1 - Arrancar em disparada para longe")
+print("2 - Manter a posição e aguardar a aproximação")
+escolha1 = input("Sua decisão imediata: ")
 
 if escolha1 == "1":
-    print("Você escapou... Por enquanto!")
+    print("\n🏃 Você se esgueira entre as árvores e consegue despistar a criatura... por enquanto!")
 
 if escolha1 == "2" and poder == "3":
-    print("Você bloqueou o ataque, agora terá que enfrentá-lo!")
+    print("\n🔰 O monstro se projeta contra você, mas seu Bloqueio Absoluto absorve todo o impacto! Prepare-se para revidar!")
     batalha()
 
 if escolha1 == "2" and poder != "3":
-    print("Seu poder não parou o ataque, boa sorte na próxima!")
+    print("\n💥 O impacto da criatura é forte demais sem uma defesa sólida! O golpe atravessa sua guarda!")
     troca_poder()
